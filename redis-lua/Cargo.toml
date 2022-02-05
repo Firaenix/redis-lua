@@ -1,6 +1,6 @@
 [package]
 name = "redis-lua"
-version = "0.4.0"
+version = "0.4.1"
 authors = ["YushiOMOTE <yushiomote@gmail.com>"]
 edition = "2018"
 keywords = ["redis", "database"]
@@ -15,15 +15,15 @@ readme = "../README.md"
 serde = "1.0"
 rmp = "0.8"
 proc-macro-hack = "0.5"
-redis = "0.16"
+redis = "0.21.5"
 futures = "0.3"
 async-trait = "0.1"
 redis-lua-macro = { version = "0.4", path = "../redis-lua-macro" }
 
 [dev-dependencies]
-rmp-serde = "0.14"
-redis = { version = "0.16", features = ["tokio-rt-core"] }
+rmp-serde = "1.0.0"
+redis = { version = "0.21.5", features = ["tokio-comp", "cluster", "r2d2", "aio", "connection-manager"] }
 tokio = { version = "0.2", features = ["full"] }
 
 [build-dependencies]
-rustc_version = "0.2"
+rustc_version = "0.4.0"
